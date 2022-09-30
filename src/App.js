@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import {Input} from './components/input';
 
@@ -33,6 +33,7 @@ function App() {
       setCountry(data.sys.country);
   
       setDataFetched(true);
+
     } catch (error) {
       console.error(error);
       alert('Please enter a valid location');
@@ -54,9 +55,11 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    defaultDataFetched();
-  }, [])
+  defaultDataFetched();
+
+  // useEffect(() => {
+  //   defaultDataFetched();
+  // }, [])
 
   return (
     <div className="App">
